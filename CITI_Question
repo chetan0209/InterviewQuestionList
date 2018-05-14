@@ -10,4 +10,5 @@ Now StringBuffer we can make changes, so you make you classs imutablity of the c
 
 Answer : To Handale such scenario we will use toString method while return element.
 
-4:
+4:Create own cache and what is LRU?
+5:
