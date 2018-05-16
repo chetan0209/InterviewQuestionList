@@ -4,7 +4,7 @@
 
 int i=10;
 StringBuffer sb="Chetan";
-....
+.....
 
 Now StringBuffer we can make changes, so you make you classs imutablity of the class.
 
