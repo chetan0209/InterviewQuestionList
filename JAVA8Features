@@ -1,7 +1,7 @@
 JAVA 8 Featutres:
 
 1: Default and static method in interface
-2: Functional Interfaces and lambda expression.
+2Functional Interface( :SAM: Single abstract method) and lambda expression.
 3: forEach() method in iterable interface 
 4: JAVA Stream API for Buld Data Operations on Collections.
 5: JAVA Time API
