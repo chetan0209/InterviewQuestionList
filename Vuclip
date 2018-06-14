@@ -1,0 +1,261 @@
+You are in Section 1: Out of Date Apps, question 1 of 1. There are a total of 6 sections.
+An Oldest API
+In this question, you have to write a well-designed program in Java8 (or newer; preferably using Java8 features like streams, lambdas, Optional). Your program must be well-designed, with appropriate classes and methods, as well as correct (i.e. producing the correct output for various different input cases) and efficient (i.e. scalable).
+A company has a number of mobile apps that they sell to customers, and each app uses one or more REST APIs. All REST APIs are given version numbers like v1, v2, v3, ... etc. which are incremented each time the REST API team releases a new version of the API to the app teams.
+Consider a file input.txt which contains information about which versions of the various APIs are being used by the current release of each app of the company:
+Mail App, Authentication API, v6
+Video Call App, Authentication API, v7
+Mail App, Data Storage API, v10
+Chat App, Data Storage API, v11
+Mail App, Search API, v6
+Chat App, Authentication API, v8
+Chat App, Presence API, v2
+Video Call App, Data Storage API, v11
+Video Call App, Video Compression API, v3
+Each line of this file consists of 3 comma-separated fields. The first field is a app name, the second field is a API name, and the third field is the API version number used by that app. The example given above indicates that the Mail App, uses version v7 of the Authentication API, and the Video Call App uses version v7 of the Authentication API, and the Mail App also uses version v10 of the Data Storage API, and so on. For the purposes of this program, assume that all version numbers are of the form v<digits> where <digits> represents one or more decimal digits.
+Write a program (using Java8 or newer) that reads this file, figures out which is the oldest version number of each API, and then prints the names of apps which are using the oldest version of at least one API. Special Note: if a API has only one version, then that version is not considered an oldestversion.
+Thus, in case of the example input given above, the output of your program should be:
+Mail App
+because Mail App is using the oldest version of the Authentication API as well as the Data Storage API. Please read the example carefully to understand exactly what you're expected to do.
+Important notes:
+•	To make things easier for you, we have already written a starter program which reads input.txt line-by-line, and does nothing. It simply prints the number of lines to output.txt. You need ti just modify this program to do the required processing, and change what is printed to output.txt as shown above.
+•	Ideally, your program should use Java8 features like streams, lambdas, Optional types etc
+•	Your program must be well-designed, with appropriate classes and methods
+•	You must submit a working program that produces the correct output for various different input cases
+•	Your program must be efficient (i.e. scalable).
+•	Upload a zip file containing the source code of your program
+
+
+2:
+ 
+CSV Sum
+Write a script (in bash, or any other language of your choice) to print the sum of all the numbers in the first column of the comma-separated-values data in the file /var/prod/data.csv. (Note: assume that the csv file does not have any header line, and the data in the first column are all integers (no need to do error checking))
+The output of the script should be just a single integer representing the sum, and nothing else. Choice of appropriate language is important.
+3:
+Latest log
+Write a script (in bash, or any other language of your choice) to print the name of the most recently modified file in the directory /var/log/prod/ whose name is of the form access-<ddd>.log (i.e. the filename consists of access- followed by 1 or more digits, followed by .log
+The output of the script should be just the filename, and nothing else. Choice of appropriate language is important.
+
+
+4: Department Budget
+Consider these RDBMS Tables:
+
+Table: Employee
+    EmpID: INTEGER NOT NULL
+    DeptID: INTEGER NOT NULL
+    Name: Char(40) NOT NULL
+    Age: INTEGER NOT NULL
+    Salary: INTEGER NOT NULL
+
+Table: Department
+    DeptID: INTEGER NOT NULL
+    Name: CHAR(20) NOT NULL
+	
+Write an SQL query which will list the names of departments along with the total budget of that department. Total budget is simply defined as the sum of the salaries of all the employees in that department. In case a department does not have any employees, the total budget should be listed as 0. The output should contain only two columns: DeptName and TotalBudget.
+
+Expensive Department
+Consider these RDBMS Tables:
+Table: Employee
+    EmpID: INTEGER NOT NULL
+    DeptID: INTEGER NOT NULL
+    Name: Char(40) NOT NULL
+    Age: INTEGER NOT NULL
+    Salary: INTEGER NOT NULL
+
+Table: Department
+    DeptID: INTEGER NOT NULL
+    Name: CHAR(20) NOT NULL
+Write an SQL query which outputs names of all the departments such that the average salary of the department is greater than 10,00,000. The output should contain only one column: DeptName.
+A
+
+Memory Usage
+Consider this Java class:
+import java.util.*;
+
+public class Test {
+    public static void main(String[] args) {
+        ArrayList<ArrayList<Integer>> array =
+            new ArrayList<ArrayList<Integer>>();
+        for(int i=0; i<10000; i++) {
+            try {
+                array.add(new ArrayList<Integer>(1000000));
+            } catch (OutOfMemoryError e) {
+                System.out.println(i);
+                break;
+            }
+        }
+    }
+}
+This class is first run using the command java -Xmx128M Test and then later it is run using the command java -Xmx256M. Which of the following statements are true:
+Pick all that apply
+•	  The program will print nothing in both cases
+•	  The program will print the same integer to the output in both cases
+•	  The program will print a higher integer to the output the second time
+•	  The program will print a lower integer to the output the second time
+•	  The program will result in a RuntimeError in both cases
+
+
+Java GC
+Which of the following statements about Java Garbage Collection (GC) are true?
+Pick all that apply
+•	  There can never be any dangling pointers in a Java program because the GC will never reclaim objects that are still in use
+•	  The memory consumption of a Java program can never grow indefinitely because GC runs regularly and reduces the memory consumed
+•	  The programmer can precisely control deallocation of memory by manually calling the finalizemethod on allocated objects
+•	  The use of Java Generics is to be avoided because the GC cannot garbage collect instances of classes with Generic types
+
+
+Q :6: Consider the following code implementing a Singleton Pattern:
+
+class Singleton {
+    private Inner inner;
+    private static Singleton s = new Singleton();
+    public Singleton() {
+        inner = null;
+        // other code goes here
+    }
+    public static Singleton getSingleton() {
+        return s;
+    }
+    public Inner getInner() {
+        return inner;
+    }
+    public void setInner(Inner i) {
+        inner = i;
+    }
+}
+This code has a few errors in it. What errors need to be fixed before it is a correct implementation of the Singleton Pattern. Be prepared to defend your answer in the interview.
+Pick all that apply
+•	  The Singleton Class must be final
+•	  The Singleton constructor must be private
+•	  The setInner method must be removed or made private
+•	  The Inner class must a subclass of Outer
+•	  The Singleton class must be derived from Serializable
+
+first point answer: 
+https://stackoverflow.com/questions/13870491/is-the-final-keyword-necessary-in-the-java-singleton-class
+Q:
+Generic Typing
+Consider this code fragment:
+Map<String,List<Integer>> x = new TreeMap<> ();
+Which of the following statements are true about this (assume Java SE 8)?
+Pick all that apply
+•	  This will result in a compilation error because the key and value type parameters for the TreeMapon the right hand side are not specified
+•	  The left-hand-side defines an instance of a Map with String keys and Integer values.
+•	  x.get(“abc”) returns an object of type Integer or null
+•	  x.keySet() returns an object of type Set<String>
+•	  x is an instance of TreeMap<String,List<Integer>> after this statement
+
+
+Q:
+ 
+SOLID Principles #2
+
+Consider the following Java code
+public class QueryInterface {
+    /* ... */
+    public void startTransaction() { /* ... */ }
+    public void endTransaction() { /* ... /* }
+    public void loadData(String dataSource) {
+        /* Load data from dataSource */
+    }
+    public Result runQuery(String query) {
+        /* run query on previously loaded data and
+           return the results */
+    }
+    public Result csvQuery(String fileName, String query) {
+        /* Load data from a comma-separated-values in `fileName`
+           Then run `query` on the data, and return the results */
+    }
+}
+
+public class RemoteQueryInterface: QueryInterface {
+    public void loadData(String dataSource) { 
+        /* Load data from a remote source
+           dataSource is a URL, for example:
+               <https://www.domain.com/restApi/endPoint>
+           Fetch the data from the given URL and make it
+           available locally
+         */
+    }
+}
+
+public class AmazonSimpleDBQueryInterface: QueryInterface {
+    public void loadData(String dataSource) {
+        /* Load data from an Amazon SimpleDB database
+           dataSource must be the Amazon SimpleDB endpoint */
+    }
+}
+
+Which of the following SOLID principles is violated by this code?
+Pick all that apply
+•	  This violates open/closed principle because derived classes can modify the runQuery method
+•	  This violates Liskov Substitution Principle because RemoteQueryInterface requires a different format for dataSource parameter
+•	  This violates single responsibility principle because csvQuery is doing two completely unrelated things
+•	  This violates the Dependency Inversion Principle because RemoteQueryInterface and AmazonSimpleDBQueryInterface are derived from QueryInterface.
+•	  This violates the interface segregation principle because QueryInterface is a class and not an interface
+
+
+Q: SOLID Principles #1
+Consider the following Java code
+
+public class Database {
+    /* ... */
+    public void startTransaction() { /* ... */ }
+    public void endTransaction() { /* ... /* }
+    public Result runSQL(String sqlQuery) { /* ... */ }
+}
+
+public class Oracle: Database {
+    public Result runSQL(String sqlQuery) { 
+        /* optimized implementation */
+    }
+}
+
+public class MySQL: Database {
+    public void startTransaction() {
+        throw RuntimeException("not supported");
+    }
+    public void endTransaction() {
+        throw RuntimeException("not supported");
+    }
+}
+Which of the following SOLID principles is violated by this code?
+Pick all that apply
+•	  This violates single responsibility principle because transactions and queries are mixed up in a single interface
+•	  This violates Liskov Substitution Principle because MySQL doesn't support transactions
+•	  This violates open/closed principle because derived classes can modify the runSQL method
+•	  This violates the Dependency Inversion Principle because Oracle and MySQL are derived from Database.
+•	  This violates the interface segregation principle because Database should have been an interface instead of a class
+
+
+Q:
+HTTPS
+You are the developer of a website http://www.x.com that is currently hosted on a shared hosting server in the cloud. Currently it only serves HTTP. The server is behind a firewall that only allows connections on port 80 (www) through and disallows all other traffic. You have now been asked to convert the whole site to use the https protocol. All requests to http://x.com/abc/def/ should automatically be redirected to https://www.x.com/abc/def. Which of the following are changes you must make to do this?
+Pick all that apply
+•	  You'll need to get an SSL certificate for www.x.com
+•	  You'll need a dedicated IP address for your domain.
+•	  You will need to open port 443 (https) in the firewall
+•	  You'll need to close port 80 (www) on the firewall for security
+•	  The hard-disk that stores the database and the webserver files needs to be modified to use disk encryption
+
+
+Q:
+Cookies Expiry
+Which of the following statements about HTTP cookies are true?
+Pick all that apply
+•	  If no expiry date is specified for a cookie, it never expires
+•	  If no expiry date is specified for a cookie, it expires in 86400 seconds (1 day)
+•	  A persistent cookie cannot be deleted by the user
+•	  If no expiry date is specified for a cookie, the cookie will get deleted when the user closes the window/tab (but does not close the browser)
+•	  If no expiry date is specified for a cookie, the cookie will get deleted when the user closes the browser
+
+
+Q:
+REST
+REST (Representational State Transfer) interfaces have been extremely popular in recent times – but are still poorly understood. Which of these are necessary requirements for an interface to be called RESTful?
+Pick all that apply
+•	  The server must be stateless
+•	  The data must be represented using XML or JSON
+•	  The client and server must communicate using the HTTP protocol
+•	  All text must be encoded using UTF-8
+
