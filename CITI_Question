@@ -11,4 +11,7 @@ Now StringBuffer we can make changes, so you make you classs imutablity of the c
 Answer : To Handale such scenario we will use toString method while return element.
 
 4:Create own cache and what is LRU(Least Recently used)?
-5:
+5:Hibernate : how to define primary key : @id is annotation to define PK;
+need to make as composite key so we can achive it in hibernate : using @Embedded or @Embeddable
+
+6:How to remove duplicate record from table right sql for that
