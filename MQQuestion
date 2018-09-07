@@ -15,5 +15,9 @@ A poison message is a message in a queue that has exceeded the maximum number of
 This situation can arise, for example, when an application reads a message from a queue as part of a transaction, 
 but cannot process the message immediately because of errors.
 
+What is Topic and Queue?
+How to reporcess loss messagges in queue?
+How to configure JKS certificate? How to configure multiple jks cert.
+
 
 
