@@ -10,6 +10,11 @@ How to Implement Cache ?
 How to decide to use LinkedHashMap or HashMap ?
 What is diff b/w HashSet and TreeSet , Which is peroformence is high?
 
+IMP: if you have cluster enviorment how will you manage singleton object creation for your application. OR
+If you are application deployed on diffrent server will it follow singleton desing pattern.
+Serilizable Version ID in Detail.
+What is functional programming
+
 
 
 Hibernate :
