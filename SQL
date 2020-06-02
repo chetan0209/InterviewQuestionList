@@ -1,0 +1,5 @@
+1. How to remove duplicate record from table right sql for that
+2. Indexing with example and benifits
+3. Triggers
+4. Truncate delete and drop
+5. 
